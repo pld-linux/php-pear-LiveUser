@@ -3,8 +3,8 @@
 %define		_status		beta
 %define		_pearname	%{_class}
 
-Summary:	%{_pearname} - User authentication and permission management framework
-Summary(pl):	%{_pearname} - Uwierzytelnianie u¿ytkowników i zarz±dzanie uprawnieniami
+Summary:	%{_pearname} - user authentication and permission management framework
+Summary(pl):	%{_pearname} - uwierzytelnianie u¿ytkowników i zarz±dzanie uprawnieniami
 Name:		php-pear-%{_pearname}
 Version:	0.12.0
 Release:	1
