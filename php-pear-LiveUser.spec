@@ -45,7 +45,7 @@ have their own ways of storing permissions and user data. Just make a
 new container type and you're ready to go! Currently available are
 RDBMS containers using PEAR::DB. More are soon to follow.
 
-This class has in PEAR status: %{_status}.
+In PEAR status of this package is: %{_status}.
 
 %description -l pl
 Perm_LiveUser to zestaw klas do uwierzytelniania u¿ytkowników i
