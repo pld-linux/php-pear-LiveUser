@@ -1,16 +1,17 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		LiveUser
-%define		_status		alpha
+%define		_status		beta
 %define		_pearname	%{_class}
+
 Summary:	%{_pearname} - User authentication and permission management framework
 Summary(pl):	%{_pearname} - Uwierzytelnianie u¿ytkowników i zarz±dzanie uprawnieniami
 Name:		php-pear-%{_pearname}
-Version:	0.7
+Version:	0.10.0
 Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
-# Source0-md5:	97381fbc5afa3d1bc2506ca9d08d7544
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
+# Source0-md5:	81698911e39b4d27274e2bd559d77419
 URL:		http://pear.php.net/package/LiveUser/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
@@ -81,9 +82,10 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/{Auth,Perm}
+install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/{Admin,Auth,Perm}
 
-install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
+install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}
+install %{_pearname}-%{version}/Admin/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Admin
 install %{_pearname}-%{version}/Auth/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Auth
 install %{_pearname}-%{version}/Perm/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Perm
 
@@ -92,12 +94,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}/examples/*
-%doc %{_pearname}-%{version}/scripts/*
-%doc %{_pearname}-%{version}/sql/*
-%dir %{php_pear_dir}/%{_class}
-%dir %{php_pear_dir}/%{_class}/Auth
-%dir %{php_pear_dir}/%{_class}/Perm
-%{php_pear_dir}/%{_class}/*.php
-%{php_pear_dir}/%{_class}/Auth/*.php
-%{php_pear_dir}/%{_class}/Perm/*.php
+%doc %{_pearname}-%{version}/{docs,scripts,sql}
+%{php_pear_dir}/%{_class}.php
+%{php_pear_dir}/%{_class}
