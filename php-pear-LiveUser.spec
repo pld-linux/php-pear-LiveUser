@@ -6,12 +6,12 @@
 Summary:	%{_pearname} - user authentication and permission management framework
 Summary(pl):	%{_pearname} - uwierzytelnianie u¿ytkowników i zarz±dzanie uprawnieniami
 Name:		php-pear-%{_pearname}
-Version:	0.13.3
-Release:	2
+Version:	0.14.0
+Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	5cabec8138e19636e95eb7f559f661be
+# Source0-md5:	14b46ee7c1a508d5ac1cbd9531fd0940
 URL:		http://pear.php.net/package/LiveUser/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
@@ -82,10 +82,9 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/{Admin,Auth,Perm}
+install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/{Auth,Perm}
 
 install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}
-install %{_pearname}-%{version}/Admin/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Admin
 install %{_pearname}-%{version}/Auth/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Auth
 install %{_pearname}-%{version}/Perm/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Perm
 
