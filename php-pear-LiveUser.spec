@@ -7,16 +7,19 @@ Summary:	%{_pearname} - user authentication and permission management framework
 Summary(pl):	%{_pearname} - uwierzytelnianie u¿ytkowników i zarz±dzanie uprawnieniami
 Name:		php-pear-%{_pearname}
 Version:	0.16.6
-Release:	1
+Release:	1.2
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	2bfdae81ed8be7f4d79238caadc88473
 URL:		http://pear.php.net/package/LiveUser/
-BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# exclude optional dependencies
+%define		_noautoreq	'pear(Log.php)' 'pear(DB.*)' 'pear(MDB.*)' 'pear(MDB2.*)' 'pear(MDB2/Schema.*)' 'pear(XML/Tree.php)' 'pear(Crypt/RC4.*)'
 
 %description
 Perm_LiveUser is a set of classes for dealing with user authentication
@@ -78,23 +81,27 @@ u¿ywaj±ce PEAR::DB, wkrótce bêdzie wiêcej.
 Ta klasa ma w PEAR status: %{_status}.
 
 %prep
-%setup -q -c
+%pear_package_setup
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/{Auth,Perm}/Storage
-
-install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}
-install %{_pearname}-%{version}/Auth/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Auth
-install %{_pearname}-%{version}/Perm/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Perm
-install %{_pearname}-%{version}/Auth/Storage/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Auth/Storage
-install %{_pearname}-%{version}/Perm/Storage/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Perm/Storage
+install -d $RPM_BUILD_ROOT%{php_pear_dir}
+%pear_package_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
+	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
+fi
+
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}/{docs,sql}
+%doc install.log optional-packages.txt
+%doc docs/%{_pearname}/docs/*
+%{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}.php
 %{php_pear_dir}/%{_class}
+
+%{php_pear_dir}/data/%{_pearname}
