@@ -4,7 +4,7 @@
 %define		_pearname	%{_class}
 
 Summary:	%{_pearname} - user authentication and permission management framework
-Summary(pl):	%{_pearname} - uwierzytelnianie u¿ytkowników i zarz±dzanie uprawnieniami
+Summary(pl.UTF-8):   %{_pearname} - uwierzytelnianie uÅ¼ytkownikÃ³w i zarzÄ…dzanie uprawnieniami
 Name:		php-pear-%{_pearname}
 Version:	0.16.12
 Release:	1
@@ -55,33 +55,33 @@ RDBMS containers using PEAR::DB. More are soon to follow.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Perm_LiveUser to zestaw klas do uwierzytelniania u¿ytkowników i
-zarz±dzania uprawnieniami. Zasadniczo na ten pakiet sk³adaj± siê trzy
-g³ówne elementy:
-- LoginManager (zarz±dca logowania),
+%description -l pl.UTF-8
+Perm_LiveUser to zestaw klas do uwierzytelniania uÅ¼ytkownikÃ³w i
+zarzÄ…dzania uprawnieniami. Zasadniczo na ten pakiet skÅ‚adajÄ… siÄ™ trzy
+gÅ‚Ã³wne elementy:
+- LoginManager (zarzÄ…dca logowania),
 - kontenery Auth (uwierzytelniania),
-- kontenery Perm (uprawnieñ.
+- kontenery Perm (uprawnieÅ„.
 
-Klasa LoginManager obs³uguje proces logowania i mo¿e byæ
-skonfigurowana do u¿ywania ró¿nych kontenerów uprawnieñ oraz jednego
-lub wiêkszej liczby kontenerów uwierzytelniania. Oznacza to, ¿e mo¿na
-mieæ dane u¿ytkowników rozproszone po ró¿nych kontenerach danych, a
-LoginManager bêdzie próbowa³ u¿yæ ka¿dego zdefiniowanego kontenera a¿
-do znalezienia u¿ytkownika. Na przyk³ad mo¿na mieæ wszystkich
-u¿ytkowników strony WWW, którzy mog± zg³osiæ siê po nowe konto ze
-strony do lokalnej bazy danych serwera WWW. Mo¿na te¿ chcieæ umo¿liwiæ
+Klasa LoginManager obsÅ‚uguje proces logowania i moÅ¼e byÄ‡
+skonfigurowana do uÅ¼ywania rÃ³Å¼nych kontenerÃ³w uprawnieÅ„ oraz jednego
+lub wiÄ™kszej liczby kontenerÃ³w uwierzytelniania. Oznacza to, Å¼e moÅ¼na
+mieÄ‡ dane uÅ¼ytkownikÃ³w rozproszone po rÃ³Å¼nych kontenerach danych, a
+LoginManager bÄ™dzie prÃ³bowaÅ‚ uÅ¼yÄ‡ kaÅ¼dego zdefiniowanego kontenera aÅ¼
+do znalezienia uÅ¼ytkownika. Na przykÅ‚ad moÅ¼na mieÄ‡ wszystkich
+uÅ¼ytkownikÃ³w strony WWW, ktÃ³rzy mogÄ… zgÅ‚osiÄ‡ siÄ™ po nowe konto ze
+strony do lokalnej bazy danych serwera WWW. MoÅ¼na teÅ¼ chcieÄ‡ umoÅ¼liwiÄ‡
 wszystkim pracownikom firmy na logowanie do strony bez potrzeby
-tworzenia im nowych kont. Aby to osi±gn±æ, mo¿na zdefiniowaæ drugi
-kontener dla LoginManagera. Mo¿na tak¿e zdefiniowaæ kontener
-uprawnieñ, który bêdzie zarz±dza³ prawami dla ka¿dego u¿ytkownika.
-Zale¿nie od kontenera mo¿na zaimplementowaæ dowolne rodzaje schematów
-uprawnieñ dla aplikacji ca³y czas maj±c jedno spójne API. Przy u¿yciu
-ró¿nych kontenerów uprawnieñ i uwierzytelniania mo¿na ³atwo
-zintegrowaæ nowo pisane aplikacje ze starszymi, które mia³y w³asne
-sposoby zapisywania uprawnieñ i danych u¿ytkowników - wystarczy
-stworzyæ nowy typ kontenera. Aktualnie dostêpne s± kontenery RDBMS
-u¿ywaj±ce PEAR::DB, wkrótce bêdzie wiêcej.
+tworzenia im nowych kont. Aby to osiÄ…gnÄ…Ä‡, moÅ¼na zdefiniowaÄ‡ drugi
+kontener dla LoginManagera. MoÅ¼na takÅ¼e zdefiniowaÄ‡ kontener
+uprawnieÅ„, ktÃ³ry bÄ™dzie zarzÄ…dzaÅ‚ prawami dla kaÅ¼dego uÅ¼ytkownika.
+ZaleÅ¼nie od kontenera moÅ¼na zaimplementowaÄ‡ dowolne rodzaje schematÃ³w
+uprawnieÅ„ dla aplikacji caÅ‚y czas majÄ…c jedno spÃ³jne API. Przy uÅ¼yciu
+rÃ³Å¼nych kontenerÃ³w uprawnieÅ„ i uwierzytelniania moÅ¼na Å‚atwo
+zintegrowaÄ‡ nowo pisane aplikacje ze starszymi, ktÃ³re miaÅ‚y wÅ‚asne
+sposoby zapisywania uprawnieÅ„ i danych uÅ¼ytkownikÃ³w - wystarczy
+stworzyÄ‡ nowy typ kontenera. Aktualnie dostÄ™pne sÄ… kontenery RDBMS
+uÅ¼ywajÄ…ce PEAR::DB, wkrÃ³tce bÄ™dzie wiÄ™cej.
 
 Ta klasa ma w PEAR status: %{_status}.
 
