@@ -7,7 +7,7 @@ Summary:	%{_pearname} - user authentication and permission management framework
 Summary(pl.UTF-8):	%{_pearname} - uwierzytelnianie użytkowników i zarządzanie uprawnieniami
 Name:		php-pear-%{_pearname}
 Version:	0.16.12
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
