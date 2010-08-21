@@ -2,24 +2,32 @@
 %define		_class		LiveUser
 %define		_status		beta
 %define		_pearname	%{_class}
-
 Summary:	%{_pearname} - user authentication and permission management framework
 Summary(pl.UTF-8):	%{_pearname} - uwierzytelnianie użytkowników i zarządzanie uprawnieniami
 Name:		php-pear-%{_pearname}
 Version:	0.16.13
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	7a2bb3f2f4b0d3e4978dd00020690c74
 URL:		http://pear.php.net/package/LiveUser/
-BuildRequires:	php-pear-PEAR
+BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.b1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-common >= 3:4.2.0
 Requires:	php-pear
 Requires:	php-pear-Event_Dispatcher
 Requires:	php-pear-PEAR-core >= 1:1.3.3
+Suggests:	php-hash
+Suggests:	php-mcrypt
+Suggests:	php-pear-Crypt_RC4
+Suggests:	php-pear-DB
+Suggests:	php-pear-Log
+Suggests:	php-pear-MDB
+Suggests:	php-pear-MDB2
+Suggests:	php-pear-MDB2_Schema
+Suggests:	php-pear-XML_Tree
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
