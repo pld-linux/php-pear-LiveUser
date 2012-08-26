@@ -1,12 +1,11 @@
-%include	/usr/lib/rpm/macros.php
-%define		_class		LiveUser
 %define		_status		beta
-%define		_pearname	%{_class}
+%define		_pearname	LiveUser
+%include	/usr/lib/rpm/macros.php
 Summary:	%{_pearname} - user authentication and permission management framework
 Summary(pl.UTF-8):	%{_pearname} - uwierzytelnianie użytkowników i zarządzanie uprawnieniami
 Name:		php-pear-%{_pearname}
 Version:	0.16.14
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -15,7 +14,7 @@ URL:		http://pear.php.net/package/LiveUser/
 BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.b1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
-Requires:	php-common >= 3:4.2.0
+Requires:	php(core) >= 4.2.0
 Requires:	php-pear
 Requires:	php-pear-Event_Dispatcher
 Requires:	php-pear-PEAR-core >= 1:1.3.3
@@ -114,7 +113,7 @@ fi
 %doc install.log optional-packages.txt
 %doc docs/%{_pearname}/docs/*
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/%{_class}.php
-%{php_pear_dir}/%{_class}
+%{php_pear_dir}/LiveUser.php
+%{php_pear_dir}/LiveUser
 
 %{php_pear_dir}/data/%{_pearname}
