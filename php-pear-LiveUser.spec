@@ -1,6 +1,5 @@
 %define		_status		beta
 %define		_pearname	LiveUser
-%include	/usr/lib/rpm/macros.php
 Summary:	%{_pearname} - user authentication and permission management framework
 Summary(pl.UTF-8):	%{_pearname} - uwierzytelnianie użytkowników i zarządzanie uprawnieniami
 Name:		php-pear-%{_pearname}
